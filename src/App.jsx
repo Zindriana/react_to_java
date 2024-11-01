@@ -1,25 +1,20 @@
-import { useState } from 'react'
-import './App.css'
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [message, setMessage] = useState('');
 
-  return (
-    <>
+    useEffect(() => {
+        fetch("http://localhost:8080/hello")
+            .then(response => response.text())
+            .then(data => setMessage(data))
+            .catch(error => console.error('Error:', error));
+    }, []);
 
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <div className="App">
+            <h1>{message}</h1>
+        </div>
+    );
 }
 
-export default App
+export default App;
