@@ -4,7 +4,7 @@ function App() {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        fetch("http://localhost:8080/hello")
+        fetch("http://localhost:9090/hello")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
