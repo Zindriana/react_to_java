@@ -5,10 +5,16 @@ function App() {
 
     useEffect(() => {
         fetch("http://localhost:8080/hello")
-            .then(response => response.text())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
             .then(data => setMessage(data))
             .catch(error => console.error('Error:', error));
     }, []);
+
 
     return (
         <div className="App">
