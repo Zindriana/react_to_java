@@ -5,7 +5,7 @@ function App() {
 
 
     useEffect(() => {
-        fetch("http://localhost:9090/hello")
+        fetch("http://91.128.148.203:9090/hello")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
