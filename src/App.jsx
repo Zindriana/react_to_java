@@ -5,7 +5,7 @@ function App() {
 
 
     useEffect(() => {
-        fetch("http://91.128.148.203:9090/hello")
+        fetch("https://7de6-91-128-148-203.ngrok-free.app/hello")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -15,6 +15,7 @@ function App() {
             .then(data => setMessage(data))
             .catch(error => console.error('Error:', error));
     }, []);
+
 
 
     return (
