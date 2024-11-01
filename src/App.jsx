@@ -12,11 +12,12 @@ function App() {
                 }
                 return response.text();
             })
-            .then(data => setMessage(data))
+            .then(data => {
+                console.log('Data received:', data); // Lägg till denna rad
+                setMessage(data);
+            })
             .catch(error => console.error('Error:', error));
     }, []);
-
-
 
     return (
         <div className="App">
