@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 function App() {
     const [message, setMessage] = useState('');
     const [dieValue, setDieValue] = useState(0);
+    const [amountOfDiceInput, setAmountOfDiceInput] = useState(1);
 
 
     useEffect(() => {
@@ -21,7 +22,7 @@ function App() {
     }, []);
 
     function rollDie() {
-        fetch("http://localhost:9090/rolldie")
+        fetch(`http://localhost:9090/rolldie?amount=${amountOfDiceInput}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -38,6 +39,8 @@ function App() {
         <div className="App">
             <h1>{message}</h1>
             <h2>Die Roll = {dieValue}</h2>
+            <input className="amountOfDiceInput" type="number" placeholder="1" min="1"
+                   onChange={(event) => setAmountOfDiceInput(Number(event.target.value))}/>
             <button className="rollDieButton" onClick={rollDie}>Roll die</button>
         </div>
     );
