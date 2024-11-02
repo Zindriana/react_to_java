@@ -5,7 +5,7 @@ function App() {
 
 
     useEffect(() => {
-        fetch("https://7de6-91-128-148-203.ngrok-free.app/hello")
+        fetch("http://localhost:9090/hello")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
