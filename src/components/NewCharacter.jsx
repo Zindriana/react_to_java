@@ -8,7 +8,7 @@ function Create() {
     const [newSpirit, setNewSpirit] = useState('');
 
     function createCharacter() {
-        fetch(`https://firstjavabackend.duckdns.org/api/newcharacter`, {
+        fetch(`https://firstjavabackend.duckdns.org:9090/api/newcharacter`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
