@@ -10,7 +10,7 @@ function App() {
 
 
     useEffect(() => {
-        fetch("http://localhost:9090/hello")
+        fetch("https://dull-carrots-hear.loca.lt/hello")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
