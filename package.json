@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://zindriana.github.io/react-to-java",
-  "proxy": "http://localhost:8080",
+  "proxy": "http://localhost:9090",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
