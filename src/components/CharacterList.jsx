@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import { API_BASE_URL } from 'config.js';
+import { API_BASE_URL } from 'src/config.js';
 
 function CharacterList() {
     const [characters, setCharacters] = useState([]);
