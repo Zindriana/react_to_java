@@ -10,7 +10,7 @@ function App() {
 
 
     useEffect(() => {
-        fetch(`https://91.128.148.203:9090/hello`)
+        fetch(`https://firstjavabackend.duckdns.org/api/hello`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -24,7 +24,7 @@ function App() {
     }, []);
 
     function rollDie() {
-        fetch(`https://91.128.148.203:9090/rolldie?amount=${amountOfDiceInput}`)
+        fetch(`https://firstjavabackend.duckdns.org/api/rolldie?amount=${amountOfDiceInput}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
