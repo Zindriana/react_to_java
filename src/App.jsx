@@ -24,7 +24,7 @@ function App() {
     }, []);
 
     function rollDie() {
-        fetch(`http://localhost:9090/rolldie?amount=${amountOfDiceInput}`)
+        fetch(`https://dull-carrots-hear.loca.lt/rolldie?amount=${amountOfDiceInput}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
