@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { HashRouter, Route, Routes, Link } from 'react-router-dom';
-import { API_BASE_URL } from './config';
 import CharacterList from "./components/CharacterList.jsx";
 import NewCharacter from "./components/NewCharacter.jsx";
 
@@ -11,7 +10,7 @@ function App() {
 
 
     useEffect(() => {
-        fetch(`${API_BASE_URL}/hello`)
+        fetch(`http://91.128.148.203:9090/hello`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -25,7 +24,7 @@ function App() {
     }, []);
 
     function rollDie() {
-        fetch(`${API_BASE_URL}/rolldie?amount=${amountOfDiceInput}`)
+        fetch(`http://91.128.148.203:9090/rolldie?amount=${amountOfDiceInput}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

@@ -1,11 +1,10 @@
 import {useEffect, useState} from "react";
-import { API_BASE_URL } from '../config';
 
 function CharacterList() {
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
-        fetch(`${API_BASE_URL}/getcharacters`)
+        fetch(`http://91.128.148.203:9090/getcharacters`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

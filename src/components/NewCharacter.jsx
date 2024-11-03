@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { API_BASE_URL } from '../config';
 
 function Create() {
     const [newCharacterName, setNewCharacterName] = useState('');
@@ -9,7 +8,7 @@ function Create() {
     const [newSpirit, setNewSpirit] = useState('');
 
     function createCharacter() {
-        fetch(`${API_BASE_URL}/newcharacter`, {
+        fetch(`http://91.128.148.203:9090/newcharacter`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
