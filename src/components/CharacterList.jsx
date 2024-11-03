@@ -4,7 +4,7 @@ function CharacterList() {
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:9090/getcharacters")
+        fetch("https://dull-carrots-hear.loca.lt/getcharacters")
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);

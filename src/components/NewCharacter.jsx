@@ -8,7 +8,7 @@ function Create() {
     const [newSpirit, setNewSpirit] = useState('');
 
     function createCharacter() {
-        fetch('http://localhost:9090/newcharacter', {
+        fetch('https://dull-carrots-hear.loca.lt/newcharacter', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
