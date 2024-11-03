@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { HashRouter, Route, Routes, Link } from 'react-router-dom';
-import { API_BASE_URL } from 'src/config.js';
+import { API_BASE_URL } from './config';
 import CharacterList from "./components/CharacterList.jsx";
 import NewCharacter from "./components/NewCharacter.jsx";
 
