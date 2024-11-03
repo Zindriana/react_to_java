@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { API_BASE_URL } from 'config.js';
 
 function Create() {
     const [newCharacterName, setNewCharacterName] = useState('');
@@ -8,7 +9,7 @@ function Create() {
     const [newSpirit, setNewSpirit] = useState('');
 
     function createCharacter() {
-        fetch('https://dull-carrots-hear.loca.lt/newcharacter', {
+        fetch(`${API_BASE_URL}/newcharacter`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
