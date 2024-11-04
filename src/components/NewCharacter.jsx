@@ -6,6 +6,10 @@ function Create() {
     const [newPhysical, setNewPhysical] = useState('');
     const [newSocial, setNewSocial] = useState('');
     const [newSpirit, setNewSpirit] = useState('');
+    const [canDwarven, setCanDwarven] = useState(false);
+    const [canElven, setCanElven] = useState(false);
+    const [canHuman, setCanHuman] = useState(false);
+    const [canOrc, setCanOrc] = useState(false);
 
     function createCharacter() {
         fetch(`https://91.128.148.203:9090/newcharacter`, {
@@ -19,6 +23,10 @@ function Create() {
                 physical: newPhysical,
                 social: newSocial,
                 spirit: newSpirit,
+                canDwarven: canDwarven,
+                canElven: canElven,
+                canHuman: canHuman,
+                canOrc: canOrc,
             }),
         })
 
@@ -51,6 +59,23 @@ function Create() {
             <input className="newSpiritValue" type="number" placeholder="1" min="1"
                    onChange={(event) => setNewSpirit(event.target.value)}/>
             <br/>
+            <h4>Select Languages</h4>
+            <label>
+                <input type="checkbox" checked={canDwarven} onChange={() => setCanDwarven(!canDwarven)}/>
+                Dwarven
+            </label>
+            <label>
+                <input type="checkbox" checked={canElven} onChange={() => setCanElven(!canElven)}/>
+                Elven
+            </label>
+            <label>
+                <input type="checkbox" checked={canHuman} onChange={() => setCanHuman(!canHuman)}/>
+                Human
+            </label>
+            <label>
+                <input type="checkbox" checked={canOrc} onChange={() => setCanOrc(!canOrc)}/>
+                Orc
+            </label>
             <button className="createNewCharacterBtn" onClick={createCharacter}>Create character</button>
         </>
     );
