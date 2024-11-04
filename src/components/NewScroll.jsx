@@ -43,10 +43,9 @@ function CreateScroll() {
                     <option value="orc">Orcish</option>
             </select>
                 <h4>Scroll Text</h4>
-                <input className="newScrollContent" type="text"
+                <input className="newScrollContent" type="textarea"
                        onChange={(event) => setNewScrollContent(event.target.value)}/>
-                <h4>Character social value</h4>
-                <button className="createNewScrollBtn" onClick={createNewScroll}>Create character</button>
+                <button className="createNewScrollBtn" onClick={createNewScroll}>Create scroll</button>
             </>
             );
             }
