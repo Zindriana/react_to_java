@@ -29,6 +29,10 @@ function CharacterList() {
                         <p>Physical: {character.physical}</p>
                         <p>Social: {character.social}</p>
                         <p>Spirit: {character.spirit}</p>
+                        <p>Dwarven: {character.canDwarven}</p>
+                        <p>Elvish: {character.canElven}</p>
+                        <p>Human: {character.canHuman}</p>
+                        <p>Orc: {character.canOrc}</p>
                     </li>
                 ))}
             </ul>
