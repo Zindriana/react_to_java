@@ -3,7 +3,7 @@ import {API_BASE_URL} from "../config.js";
 
 function CreateScroll() {
     const [newScrollName, setNewScrollName] = useState('');
-    const [newScrollLanguage, setNewScrollLanguage] = useState('');
+    const [newScrollLanguage, setNewScrollLanguage] = useState('dwarven');
     const [newScrollContent, setNewScrollContent] = useState('');
 
     function createNewScroll() {
@@ -35,7 +35,7 @@ function CreateScroll() {
             <input className="newScrollName" type="text" placeholder="Name"
                    onChange={(event) => setNewScrollName(event.target.value)}/>
             <h4>Scroll Language</h4>
-            <select className="newScrollLanguage"
+            <select className="newScrollLanguage" value={newScrollLanguage}
                     onChange={(event) => setNewScrollLanguage(event.target.value)}>
                     <option value="dwarven">Dwarven</option>
                     <option value="elven">Elvish</option>
