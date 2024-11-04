@@ -35,15 +35,20 @@ function CreateScroll() {
             <input className="newScrollName" type="text" placeholder="Name"
                    onChange={(event) => setNewScrollName(event.target.value)}/>
             <h4>Scroll Language</h4>
-            <input className="newScrollLanguage" type="text"
-                   onChange={(event) => setNewScrollLanguage(event.target.value)}/>
-            <h4>Scroll Text</h4>
-            <input className="newScrollContent" type="text"
-                   onChange={(event) => setNewScrollContent(event.target.value)}/>
-            <h4>Character social value</h4>
-            <button className="createNewScrollBtn" onClick={createNewScroll}>Create character</button>
-        </>
-    );
-}
+            <select className="newScrollLanguage"
+                    onChange={(event) => setNewScrollLanguage(event.target.value)}>
+                    <option value="dwarven">Dwarven</option>
+                    <option value="elven">Elvish</option>
+                    <option value="human">Human</option>
+                    <option value="orc">Orcish</option>
+            </select>
+                <h4>Scroll Text</h4>
+                <input className="newScrollContent" type="text"
+                       onChange={(event) => setNewScrollContent(event.target.value)}/>
+                <h4>Character social value</h4>
+                <button className="createNewScrollBtn" onClick={createNewScroll}>Create character</button>
+            </>
+            );
+            }
 
-export default CreateScroll
+            export default CreateScroll
