@@ -31,7 +31,6 @@ function CharacterList() {
                     active: isActive
                 }),
             })
-                .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
                 })
