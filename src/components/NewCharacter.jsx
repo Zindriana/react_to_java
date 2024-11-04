@@ -8,7 +8,7 @@ function Create() {
     const [newSpirit, setNewSpirit] = useState('');
 
     function createCharacter() {
-        fetch(`https://91.128.148.203/newcharacter`, {
+        fetch(`https://91.128.148.203:9090/newcharacter`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
