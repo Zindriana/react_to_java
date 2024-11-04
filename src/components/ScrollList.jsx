@@ -20,7 +20,7 @@ function ScrollList() {
 
     return (
         <div>
-            <h1>Character List</h1>
+            <h1>Scroll List</h1>
             <ul>
                 {characters.map((scroll, index) => (
                     <li key={index}>
