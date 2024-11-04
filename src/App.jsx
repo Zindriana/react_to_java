@@ -49,11 +49,11 @@ function App() {
                 <button className="rollDieButton" onClick={rollDie}>Roll die</button>
                 <br/>
                 <nav>
-                    <Link to="/">Home</Link>  ||
-                    <Link to="/characterlist">Character List</Link>  ||
-                    <Link to="/newcharacter">New Character</Link>  ||
-                    <Link to="/scrolllist">Scroll List</Link>  ||
-                    <Link to="/newscroll">New Scroll</Link>  ||
+                    <Link to="/"> Home </Link>  ||
+                    <Link to="/characterlist"> Character List </Link>  ||
+                    <Link to="/newcharacter"> New Character </Link>  ||
+                    <Link to="/scrolllist"> Scroll List </Link>  ||
+                    <Link to="/newscroll"> New Scroll </Link>  ||
                 </nav>
                 <Routes>
                     <Route path="/" element={<div>Home</div>}/>
