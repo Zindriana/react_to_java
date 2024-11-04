@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
-import {API_BASE_URL} from "../config.js";
+//import {API_BASE_URL} from "../config.js";
 
 function ScrollList() {
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
-        fetch(`${API_BASE_URL}/getscrolls`)
+        fetch(`https://91.128.148.203:9090/getscrolls`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
