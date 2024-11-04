@@ -4,7 +4,7 @@ function CharacterList() {
     const [characters, setCharacters] = useState([]);
 
     useEffect(() => {
-        fetch(`https://firstjavabackend.duckdns.org:9090/api/getcharacters`)
+        fetch(`https://91.128.148.203/getcharacters`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
