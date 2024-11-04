@@ -34,12 +34,12 @@ function CharacterList() {
                 .then(data => {
                     console.log('Success:', data);
                 })
-                .catch(error => console.error('Error updating character:', error)); // Hantera eventuella fel
+                .catch(error => console.error('Error updating character:', error));
         });
     }
 
     return (
-        <div>
+        <>
             <h1>Character List</h1>
             <ul>
                 {characters.map((character, index) => (
@@ -58,7 +58,7 @@ function CharacterList() {
                     </li>
                 ))}
             </ul>
-        </div>
+        </>
     );
 }
 

@@ -2,7 +2,8 @@ import {useEffect, useState} from "react";
 import {API_BASE_URL} from "../config.js";
 
 function ScrollList() {
-    const [characters, setCharacters] = useState([]);
+    const [scrolls, setScrolls] = useState([]);
+    const [scrollText, setScrollText] = useState("");
 
     useEffect(() => {
         fetch(`${API_BASE_URL}/getscrolls`)
@@ -13,23 +14,53 @@ function ScrollList() {
                 return response.json();
             })
             .then(data => {
-                setCharacters(data);
+                setScrolls(data);
             })
             .catch(error => console.error('Error:', error));
     }, []);
 
+    function handleReadScroll(scroll) {
+        let language = scroll.language;
+        fetch(`${API_BASE_URL}/getcharacters`)
+            .then(response => response.json())
+            .then(data => {
+                const activeHero = data.find(hero => hero.isActive);
+                if (activeHero) {
+                    if ((language === 'Dwarven' && activeHero.canDwarven) ||
+                        (language === 'Elven' && activeHero.canElven) ||
+                        (language === 'Human' && activeHero.canHuman) ||
+                        (language === 'Orc' && activeHero.canOrc)) {
+                        fetch(`${API_BASE_URL}/decrypt`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ content: scroll.content })
+                        })
+                            .then(response => response.json())
+                            .then(decryptedData => {
+                                setScrollText(decryptedData.decryptedText);
+                            })
+                            .catch(error => console.error('Error:', error));
+                    }
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
     return (
-        <div>
+        <>
+            <p>{scrollText}</p>
             <h1>Scroll List</h1>
             <ul>
-                {characters.map((scroll, index) => (
+                {scrolls.map((scroll, index) => (
                     <li key={index}>
                         <h2>{scroll.name}</h2>
-                        <p>Text: {scroll.content}</p>
+                        <button className="readScrollBtn" onClick={() => handleReadScroll(scroll)}>Läs</button>
                     </li>
                 ))}
             </ul>
-        </div>
+        </>
     );
 }
 
