@@ -39,6 +39,7 @@ function ScrollList() {
                         })
                             .then(response => response.json())
                             .then(decryptedData => {
+                                console.log('Decrypted data:', decryptedData);
                                 setScrollText(decryptedData.decryptedText);
                             })
                             .catch(error => console.error('Error:', error));
