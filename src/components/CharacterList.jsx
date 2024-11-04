@@ -18,6 +18,12 @@ function CharacterList() {
             .catch(error => console.error('Error:', error));
     }, []);
 
+    function handleChooseCharacter(){
+        // characters.map((character) => {
+        //
+        // })
+    }
+
     return (
         <div>
             <h1>Character List</h1>
@@ -25,14 +31,16 @@ function CharacterList() {
                 {characters.map((character, index) => (
                     <li key={index}>
                         <h2>{character.name}</h2>
+                        <button className="chooseCharacterBtn" onClick={handleChooseCharacter}>Choose this character</button>
+                        <p>Active: {character.active  ? 'Yes' : 'No'}</p>
                         <p>Mental: {character.mental}</p>
                         <p>Physical: {character.physical}</p>
                         <p>Social: {character.social}</p>
                         <p>Spirit: {character.spirit}</p>
-                        <p>Dwarven: {character.canDwarven}</p>
-                        <p>Elvish: {character.canElven}</p>
-                        <p>Human: {character.canHuman}</p>
-                        <p>Orc: {character.canOrc}</p>
+                        <p>Dwarven: {character.canDwarven ? 'Yes' : 'No'}</p>
+                        <p>Elvish: {character.canElven ? 'Yes' : 'No'}</p>
+                        <p>Human: {character.canHuman ? 'Yes' : 'No'}</p>
+                        <p>Orc: {character.canOrc ? 'Yes' : 'No'}</p>
                     </li>
                 ))}
             </ul>
