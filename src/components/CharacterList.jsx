@@ -18,10 +18,22 @@ function CharacterList() {
             .catch(error => console.error('Error:', error));
     }, []);
 
-    function handleChooseCharacter(){
-        // characters.map((character) => {
-        //
-        // })
+    function handleChooseCharacter(selectedCharacter){
+        characters.forEach(character => {
+            const isActive = character === selectedCharacter;
+            fetch(`${API_BASE_URL}/updatecharacters`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    name: character.name,
+                    active: isActive
+                }),
+            })
+                .then(response => response.json())
+                .catch(error => console.error('Error updating character:', error)); // Hantera eventuella fel
+        });
     }
 
     return (
@@ -31,7 +43,7 @@ function CharacterList() {
                 {characters.map((character, index) => (
                     <li key={index}>
                         <h2>{character.name}</h2>
-                        <button className="chooseCharacterBtn" onClick={handleChooseCharacter}>Choose this character</button>
+                        <button className="chooseCharacterBtn" onClick={() => handleChooseCharacter(character)}>Choose this character</button>
                         <p>Active: {character.active  ? 'Yes' : 'No'}</p>
                         <p>Mental: {character.mental}</p>
                         <p>Physical: {character.physical}</p>
