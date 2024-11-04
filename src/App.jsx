@@ -52,8 +52,8 @@ function App() {
                     <Link to="/">Home</Link> |
                     <Link to="/characterlist">Character List</Link> |
                     <Link to="/newcharacter">New Character</Link>
-                    <Link to="/newcharacter">Scroll List</Link>
-                    <Link to="/newcharacter">New Scroll</Link>
+                    <Link to="/scrolllist">Scroll List</Link>
+                    <Link to="/newscroll">New Scroll</Link>
                 </nav>
                 <Routes>
                     <Route path="/" element={<div>Home</div>}/>
