@@ -24,7 +24,7 @@ function ScrollList() {
         fetch(`${API_BASE_URL}/getcharacters`)
             .then(response => response.json())
             .then(data => {console.log('Heros data:', data);
-                const activeHero = data.find(hero => hero.isActive);
+                const activeHero = data.find(hero => hero.active);
                 console.log('Active Hero:', activeHero);
                 if (activeHero) {
                     if ((language === 'Dwarven' && activeHero.canDwarven) ||
