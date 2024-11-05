@@ -21,11 +21,11 @@ function ScrollList() {
 
     function handleReadScroll(scroll) {
         let language = scroll.language;
+        console.log(scroll);
         fetch(`${API_BASE_URL}/getcharacters`)
             .then(response => response.json())
-            .then(data => {console.log('Heros data:', data);
+            .then(data => {
                 const activeHero = data.find(hero => hero.active);
-                console.log('Active Hero:', activeHero);
                 if (activeHero) {
                     if ((language === 'Dwarven' && activeHero.canDwarven) ||
                         (language === 'Elven' && activeHero.canElven) ||
