@@ -28,10 +28,10 @@ function ScrollList() {
                 const activeHero = data.find(hero => hero.active);
                 console.log(activeHero);
                 if (activeHero) {
-                    if ((language === 'Dwarven' && activeHero.canDwarven) ||
-                        (language === 'Elven' && activeHero.canElven) ||
-                        (language === 'Human' && activeHero.canHuman) ||
-                        (language === 'Orc' && activeHero.canOrc)) {
+                    if ((language === 'dwarven' && activeHero.canDwarven) ||
+                        (language === 'elven' && activeHero.canElven) ||
+                        (language === 'human' && activeHero.canHuman) ||
+                        (language === 'orc' && activeHero.canOrc)) {
                         fetch(`${API_BASE_URL}/decrypt`, {
                             method: 'POST',
                             headers: {
