@@ -49,6 +49,10 @@ function ScrollList() {
             .catch(error => console.error('Error:', error));
     }
 
+    function updateScrollText(scroll){
+        setScrollText(scroll);
+    }
+
     return (
         <>
             <p>{scrollText}</p>
@@ -58,7 +62,7 @@ function ScrollList() {
                     <li key={index}>
                         <h2>{scroll.name}</h2>
                         <p>{scroll.content}</p>
-                        <button className="readScrollBtn" onClick={() => {handleReadScroll(scroll)}}>Läs</button>
+                        <button className="readScrollBtn" onClick={() => {updateScrollText(scroll.content); handleReadScroll(scroll)}}>Läs</button>
                     </li>
                 ))}
             </ul>
