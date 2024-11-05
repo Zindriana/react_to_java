@@ -26,6 +26,7 @@ function ScrollList() {
             .then(response => response.json())
             .then(data => {
                 const activeHero = data.find(hero => hero.active);
+                console.log(activeHero);
                 if (activeHero) {
                     if ((language === 'Dwarven' && activeHero.canDwarven) ||
                         (language === 'Elven' && activeHero.canElven) ||
