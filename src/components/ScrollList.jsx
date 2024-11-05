@@ -51,11 +51,12 @@ function ScrollList() {
 
     function updateScrollText(scroll){
         setScrollText(scroll);
+        console.log(scrollText)
     }
 
     return (
         <>
-            <p>{scrollText}</p>
+            <p>Scroll text: {scrollText}</p>
             <h1>Scroll List</h1>
             <ul>
                 {scrolls.map((scroll, index) => (
