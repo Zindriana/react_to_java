@@ -45,7 +45,7 @@ function ScrollList() {
                             })
                             .catch(error => console.error('Error:', error));
                     }
-                }
+                } else { console.log("No active hero")}
             })
             .catch(error => console.error('Error:', error));
     }
