@@ -57,6 +57,7 @@ function ScrollList() {
                 {scrolls.map((scroll, index) => (
                     <li key={index}>
                         <h2>{scroll.name}</h2>
+                        <p>{scroll.content}</p>
                         <button className="readScrollBtn" onClick={() => handleReadScroll(scroll)}>Läs</button>
                     </li>
                 ))}
