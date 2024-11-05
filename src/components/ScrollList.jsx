@@ -45,7 +45,7 @@ function ScrollList() {
                             })
                             .then(decryptedData => {
                                 console.log('Decrypted data:', decryptedData);
-                                setScrollText(decryptedData.decryptedText);
+                                setScrollText(decryptedData.content);
                             }).catch(error => {
                             console.error('Error during fetch:', error);
                         });
