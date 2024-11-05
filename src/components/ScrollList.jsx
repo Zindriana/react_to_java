@@ -39,7 +39,10 @@ function ScrollList() {
                             },
                             body: JSON.stringify({ content: scroll.content })
                         })
-                            .then(response => response.json())
+                            .then(response => {
+                                console.log('Response status:', response.status);
+                                return response.json();
+                            })
                             .then(decryptedData => {
                                 console.log('Decrypted data:', decryptedData);
                                 setScrollText(decryptedData.decryptedText);
