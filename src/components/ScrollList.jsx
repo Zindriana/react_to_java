@@ -23,8 +23,9 @@ function ScrollList() {
         let language = scroll.language;
         fetch(`${API_BASE_URL}/getcharacters`)
             .then(response => response.json())
-            .then(data => {
+            .then(data => {console.log('Heros data:', data);
                 const activeHero = data.find(hero => hero.isActive);
+                console.log('Active Hero:', activeHero);
                 if (activeHero) {
                     if ((language === 'Dwarven' && activeHero.canDwarven) ||
                         (language === 'Elven' && activeHero.canElven) ||
@@ -49,11 +50,6 @@ function ScrollList() {
             .catch(error => console.error('Error:', error));
     }
 
-    function updateScrollText(scroll){
-        setScrollText(scroll);
-        console.log(scrollText)
-    }
-
     return (
         <>
             <p>Scroll text: {scrollText}</p>
@@ -63,7 +59,7 @@ function ScrollList() {
                     <li key={index}>
                         <h2>{scroll.name}</h2>
                         <p>{scroll.content}</p>
-                        <button className="readScrollBtn" onClick={() => {updateScrollText(scroll.content); handleReadScroll(scroll)}}>Läs</button>
+                        <button className="readScrollBtn" onClick={() => {handleReadScroll(scroll)}}>Läs</button>
                     </li>
                 ))}
             </ul>
