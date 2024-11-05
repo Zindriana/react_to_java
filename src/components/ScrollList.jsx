@@ -46,8 +46,9 @@ function ScrollList() {
                             .then(decryptedData => {
                                 console.log('Decrypted data:', decryptedData);
                                 setScrollText(decryptedData.decryptedText);
-                            })
-                            .catch(error => console.error('Error:', error));
+                            }).catch(error => {
+                            console.error('Error during fetch:', error);
+                        });
                     }
                 } else { console.log("No active hero")}
             })
