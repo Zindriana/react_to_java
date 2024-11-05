@@ -14,6 +14,7 @@ function ScrollList() {
                 return response.json();
             })
             .then(data => {
+                console.log(data);
                 setScrolls(data);
             })
             .catch(error => console.error('Error:', error));
@@ -54,13 +55,17 @@ function ScrollList() {
             <p>{scrollText}</p>
             <h1>Scroll List</h1>
             <ul>
-                {scrolls.map((scroll, index) => (
-                    <li key={index}>
-                        <h2>{scroll.name}</h2>
-                        <p>{scroll.textContent}</p>
-                        <button className="readScrollBtn" onClick={() => handleReadScroll(scroll)}>Läs</button>
-                    </li>
-                ))}
+                {scrolls.length > 0 ? (
+                        scrolls.map((scroll, index) => (
+                            <li key={index}>
+                                <h2>{scroll.name}</h2>
+                                <p>{scroll.textContent}</p>
+                                <button className="readScrollBtn" onClick={() => handleReadScroll(scroll)}>Läs</button>
+                            </li>
+                        ))
+                    ) : (
+                        <p>Laddar...</p>
+                    )}
             </ul>
         </>
     );
